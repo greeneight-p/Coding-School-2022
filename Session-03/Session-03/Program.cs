@@ -32,8 +32,14 @@ uni.ScheduleCourses[0] = schedule;
 Console.WriteLine(uni.ScheduleCourses[0].ScheduleID);
 
 
+/*
+DateTime date = DateTime.Now;
+Console.WriteLine(date.ToString("d-MMM-yy"));
 
+DateTime date2 = DateTime.Parse("10-3-2012 11:30 pm");
+Console.WriteLine(date2);
 
+*/
 
 
 ////////    TODO lush askshs !

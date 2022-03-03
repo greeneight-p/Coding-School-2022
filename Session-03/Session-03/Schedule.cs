@@ -19,6 +19,21 @@ namespace Session_03 {
         public Schedule()
         {
             ScheduleID = Guid.NewGuid();
+
+            //Gia Datetime smr
+            Calendar = DateTime.Now;
+
+
+            //Gia Datetime parse apo string mono imerominia
+            //DateTime date2 = DateTime.Parse("10-3-2012");
+            //Calendar = date2;
+
+
+            //Gia Datetime parse apo string me sigkekrimeni wra
+            //DateTime date2 = DateTime.Parse("10-3-2012 12:30 PM");
+            // Calendar = date2;
+
+
         }
     }
 }
