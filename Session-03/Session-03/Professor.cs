@@ -23,8 +23,18 @@ namespace Session_03 {
         public void Teach(Guid courseID,DateTime datetime)
         {
 
+
         }
 
+
+
+
+        public void SetGrade(Guid studentID, Guid courseID,Grade gradeObj, int grade)
+        {
+            gradeObj.ActualGrade = grade; 
+            gradeObj.StudentID = studentID;
+            gradeObj.CourseID = courseID;   
+        }
 
         //public new void SetName(string name)
         //{

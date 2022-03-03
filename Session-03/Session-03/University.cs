@@ -40,10 +40,15 @@ namespace Session_03 {
             return Grades;
         }
 
-        public void SetSchedule(Guid courseID, Guid ProfessorID)
+        public Schedule SetSchedule(Guid courseID, Guid professorID, DateTime dateTime)
         {
+            Schedule newScedule = new();
+            newScedule.CourseID = courseID;
+            newScedule.ProfessorID = professorID;
+            newScedule.Calendar = dateTime;
 
-        }
+            return newScedule;
+        } 
 
 
 

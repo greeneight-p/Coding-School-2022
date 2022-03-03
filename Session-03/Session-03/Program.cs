@@ -32,6 +32,14 @@ uni.ScheduleCourses[0] = schedule;
 Console.WriteLine(uni.ScheduleCourses[0].ScheduleID);
 
 
+Grade grd = new();
+prof.SetGrade(std.PersonID, uni.Courses[0].CourseID, grd, 9);
+Console.WriteLine(grd.StudentID);
+Console.WriteLine(grd.GradeID);
+Console.WriteLine(grd.CourseID);
+Console.WriteLine(grd.ActualGrade);
+
+
 /*
 DateTime date = DateTime.Now;
 Console.WriteLine(date.ToString("d-MMM-yy"));

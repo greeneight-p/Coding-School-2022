@@ -21,7 +21,7 @@ namespace Session_03 {
             ScheduleID = Guid.NewGuid();
 
             //Gia Datetime smr
-            Calendar = DateTime.Now;
+            //Calendar = DateTime.Now;
 
 
             //Gia Datetime parse apo string mono imerominia

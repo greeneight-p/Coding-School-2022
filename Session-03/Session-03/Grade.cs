@@ -12,7 +12,7 @@ namespace Session_03 {
         public Guid CourseID { get; set; }
         public int ActualGrade {get; set; }
 
-        public Grade(Guid StudentID, Guid CourseID)
+        public Grade()
         {
             GradeID = new Guid();
         }
