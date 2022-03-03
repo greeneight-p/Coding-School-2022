@@ -17,7 +17,8 @@ namespace Session_03 {
 
         public University(){
             Courses = new Course[20];
-
+            Students = new Student[30];
+            ScheduleCourses = new Schedule[60];
 
         }
 
