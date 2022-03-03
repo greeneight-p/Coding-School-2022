@@ -30,9 +30,9 @@ namespace Session_03 {
 
 
         public void SetName(string name)
-         {
-          PersonName = name;
-         
+        {
+            PersonName = name;
+
         }
 
 

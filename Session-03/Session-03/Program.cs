@@ -8,9 +8,11 @@ Console.WriteLine(person.GetName());
 
 
 Professor prof = new();
-prof.SetName("John");
+prof.ProfessorName = "John";
+//prof.SetName("John");
 Console.WriteLine(prof.PersonID);
-Console.WriteLine(prof.GetName());
+//Console.WriteLine(prof.GetName());
+Console.WriteLine(prof.ProfessorName);
 
 Student std = new();
 std.SetName("Jim");

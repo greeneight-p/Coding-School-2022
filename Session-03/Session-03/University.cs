@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Session_03 {
-    internal class University {
+    internal class University : Institude{
 
         public Student[] Students { get; set; }
         public Course[] Courses { get; set; }   
@@ -16,6 +16,7 @@ namespace Session_03 {
 
 
         public University(){
+            Courses = new Course[20];
 
 
         }
