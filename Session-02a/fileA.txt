@@ -1,0 +1,2 @@
+﻿master branch fileA content.
+add a change.
