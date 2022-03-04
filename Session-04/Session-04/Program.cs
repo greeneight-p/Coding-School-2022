@@ -59,3 +59,15 @@ int[] ar2 = {1, 3, 7, 10};
 
 Class4 d = new Class4();
 Console.WriteLine(d.MultiplyArrays(ar1, ar2));
+
+
+//5***************************************************
+Console.WriteLine("Askhsh 5");
+int[] ar3 = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100};
+
+Class5 e = new Class5();
+Console.WriteLine("Original Array => " + e.CreateStringFromArray(ar3));
+Console.WriteLine("Sorted Array => "+ e.SortArray(ar3)); 
+
+
+

@@ -27,11 +27,27 @@ namespace Session_04 {
 
             }
 
+            //string resultString = "|";
+
+            //for (int m= 0; m < result.Length; m++) {
+
+            //    resultString += $"{result[m]}|"; 
+
+            //}
+
+
+            //return resultString;
+
+            return CreateStringFromArray(result);
+        }
+
+
+        private string CreateStringFromArray(int[] result) {
+
             string resultString = "|";
+            for (int m = 0; m < result.Length; m++) {
 
-            for (int m= 0; m < result.Length; m++) {
-
-                resultString += $"{result[m]}|"; 
+                resultString += $"{result[m]}|";
 
             }
 
