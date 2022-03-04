@@ -4,9 +4,12 @@
 //1***************************************************
 string name = "Giannis Polychroniadis";
 Class1 a = new Class1();
+Console.WriteLine("Askhsh 1");
+
 Console.WriteLine(a.ReverseString(name));
 
 //2***************************************************
+Console.WriteLine("Askhsh 2");
 
 string input = string.Empty;
 int n = -1;
@@ -36,6 +39,7 @@ Console.WriteLine(b.ExecuteChoice(choice, n));
 
 
 //3***************************************************
+Console.WriteLine("Askhsh 3");
 int x = -1;
 do {
 
@@ -43,4 +47,7 @@ do {
     Int32.TryParse(Console.ReadLine(), out x);
 
 } while (x <= 0);
+
+Class3 c = new Class3();
+Console.WriteLine(c.GetPrimeNumbers(x));
 
