@@ -15,10 +15,10 @@ namespace Session_04 {
 
             string primeNumbers = string.Empty; 
             
-            if (n == 1) {
-                primeNumbers += $"{n}";
+            if (n >= 1) {
+                primeNumbers += "1 ";
             }
-            Console.WriteLine(primeNumbers);
+            //Console.WriteLine(primeNumbers);
 
             for (int i = 3; i <= n; i++) {
 

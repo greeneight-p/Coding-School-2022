@@ -19,7 +19,7 @@ namespace Session_04 {
                 sum += i;
             }
 
-            return "The answer is :" + sum;
+            return "The answer is: " + sum;
         }
 
 

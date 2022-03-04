@@ -51,3 +51,11 @@ do {
 Class3 c = new Class3();
 Console.WriteLine(c.GetPrimeNumbers(x));
 
+
+//4***************************************************
+Console.WriteLine("Askhsh 4");
+int[] ar1 = {2, 4, 9, 12};
+int[] ar2 = {1, 3, 7, 10};
+
+Class4 d = new Class4();
+Console.WriteLine(d.MultiplyArrays(ar1, ar2));
