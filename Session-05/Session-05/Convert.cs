@@ -9,10 +9,12 @@ namespace Session_05 {
 
         private string input;
         private string result;
-        private bool done = false;
+        private bool done;
 
         public Convert(string s) {
+            done = false;
             input = s;
+            result= String.Empty;
         }
         public override string CreateMessage() {
             if (done) {

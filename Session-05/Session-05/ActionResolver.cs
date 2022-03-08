@@ -10,9 +10,9 @@ namespace Session_05 {
 
         public MessageLogger Logger { get; set; }
 
-        public ActionResolver() {
+        public ActionResolver(MessageLogger logger1) {
 
-            Logger = new MessageLogger();
+            Logger = logger1 ?? throw new ArgumentNullException(nameof(logger1));
 
         }
 
@@ -20,30 +20,37 @@ namespace Session_05 {
 
         public ActionResponse Execute( ActionRequest req) {
 
-            
+
+            var response = new ActionResponse(req.RequestID);
+
+
+
             switch (req.ActionType) {
                 case ActionEnum.Convert:
-                    var x = new Convert(req.Input);
-                    x.Do();
-                    Console.WriteLine(x.CreateMessage());
+                    var actionWorker1 = new Convert(req.Input);
+                    actionWorker1.Do();
+                    string result1 = actionWorker1.CreateMessage();
 
-                 
+                    var m = new Message(result1);
+                    Logger.Write(m);
+
+                    response.Output = result1;
+
                     break;
                 case ActionEnum.Uppercase:
                     break;
                 case ActionEnum.Reverse:
+                    var actionWorker2 = new Reverse(req.Input);
+                    actionWorker2.Do();
+                    string result2 = actionWorker2.CreateMessage();
+                    var m2 = new Message(result2);
+                    Logger.Write(m2);
+
                     break;
                 default:
                     break;
-            }
-
-
-
-
-
-
-
-            var response = new ActionResponse(req.RequestID);
+            } 
+           
             return response;
         }
 

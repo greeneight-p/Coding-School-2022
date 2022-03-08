@@ -8,15 +8,18 @@ namespace Session_05 {
     internal class MessageLogger {
 
         public Message[] Messages { get; set; }
-
+        private int i;
         public MessageLogger() {
-            Messages = new Message[20];
+           i = 0;
+           Messages = new Message[20];
         }
 
 
 
         public void ReadAll() {
-
+            for (int j = 0; j < i; j++) {
+                Console.WriteLine(Messages[j].ActualMessage);
+            }
         }
 
         public void Clear() {
@@ -25,7 +28,13 @@ namespace Session_05 {
 
 
         public void Write(Message message) {
-
+            if (i < 19) {
+                Messages[i] = message;
+                i++;
+            }
+            else {
+                Console.WriteLine("Message logger array is full !");
+            }
         }
     }
 }
