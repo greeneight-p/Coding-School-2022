@@ -26,6 +26,13 @@ var req4 = new ActionRequest()
 };
 
 
+var req5 = new ActionRequest()
+{
+    Input = "A month has 4 weeks and a week has 7 days",
+    ActionType = ActionEnum.Uppercase
+};
+
+
 
 
 var logger = new MessageLogger();
@@ -35,6 +42,8 @@ resolver.Execute(req2);
 resolver.Execute(req3);
 
 resolver.Execute(req4);
+
+resolver.Execute(req5);
 
 logger.ReadAll();
 
