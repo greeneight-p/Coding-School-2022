@@ -43,6 +43,7 @@
             this.buttonDivision = new System.Windows.Forms.Button();
             this.buttonMultiplication = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonDot = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,7 +164,7 @@
             this.buttonNumber0.TabIndex = 10;
             this.buttonNumber0.Text = "0";
             this.buttonNumber0.UseVisualStyleBackColor = true;
-            this.buttonNumber0.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonNumber0.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // buttonAddition
             // 
@@ -216,23 +217,25 @@
             // 
             // buttonRoot
             // 
-            this.buttonRoot.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonRoot.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonRoot.Location = new System.Drawing.Point(80, 3);
             this.buttonRoot.Name = "buttonRoot";
             this.buttonRoot.Size = new System.Drawing.Size(68, 48);
             this.buttonRoot.TabIndex = 16;
-            this.buttonRoot.Text = "R";
+            this.buttonRoot.Text = "Root";
             this.buttonRoot.UseVisualStyleBackColor = true;
+            this.buttonRoot.Click += new System.EventHandler(this.buttonRoot_Click);
             // 
             // buttonPower
             // 
-            this.buttonPower.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonPower.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonPower.Location = new System.Drawing.Point(6, 3);
             this.buttonPower.Name = "buttonPower";
             this.buttonPower.Size = new System.Drawing.Size(68, 48);
             this.buttonPower.TabIndex = 15;
-            this.buttonPower.Text = "P";
+            this.buttonPower.Text = "Pow";
             this.buttonPower.UseVisualStyleBackColor = true;
+            this.buttonPower.Click += new System.EventHandler(this.buttonPower_Click);
             // 
             // buttonDivision
             // 
@@ -267,12 +270,24 @@
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // buttonDot
+            // 
+            this.buttonDot.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonDot.Location = new System.Drawing.Point(154, 298);
+            this.buttonDot.Name = "buttonDot";
+            this.buttonDot.Size = new System.Drawing.Size(68, 48);
+            this.buttonDot.TabIndex = 15;
+            this.buttonDot.Text = ".";
+            this.buttonDot.UseVisualStyleBackColor = true;
+            this.buttonDot.Click += new System.EventHandler(this.buttonDot_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(530, 358);
+            this.Controls.Add(this.buttonDot);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonNumber0);
@@ -317,5 +332,6 @@
         private Button buttonDivision;
         private Button buttonMultiplication;
         private Button buttonReset;
+        private Button buttonDot;
     }
 }

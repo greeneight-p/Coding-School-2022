@@ -49,8 +49,12 @@ namespace Calculator {
                     result = worker.Do(Input);
                     break;
                 case CalcType.Power:
+                    worker = new Power();
+                    result = worker.Do(Input);
                     break;
                 case CalcType.Root:
+                    worker = new Root();
+                    result = worker.Do(Input);
                     break;
             }
 
