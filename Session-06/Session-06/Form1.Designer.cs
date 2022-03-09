@@ -44,6 +44,7 @@
             this.buttonMultiplication = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.buttonDot = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,7 +199,7 @@
             this.panel1.Controls.Add(this.buttonMultiplication);
             this.panel1.Controls.Add(this.buttonSubtraction);
             this.panel1.Controls.Add(this.buttonAddition);
-            this.panel1.Location = new System.Drawing.Point(228, 82);
+            this.panel1.Location = new System.Drawing.Point(228, 136);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 210);
             this.panel1.TabIndex = 13;
@@ -262,7 +263,7 @@
             // buttonReset
             // 
             this.buttonReset.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonReset.Location = new System.Drawing.Point(228, 28);
+            this.buttonReset.Location = new System.Drawing.Point(228, 81);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(154, 48);
             this.buttonReset.TabIndex = 14;
@@ -281,12 +282,24 @@
             this.buttonDot.UseVisualStyleBackColor = true;
             this.buttonDot.Click += new System.EventHandler(this.buttonDot_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(67, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(257, 35);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Calculator 3000";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(530, 358);
+            this.ClientSize = new System.Drawing.Size(389, 358);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDot);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.panel1);
@@ -302,7 +315,7 @@
             this.Controls.Add(this.buttonNumber2);
             this.Controls.Add(this.buttonNumber1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator 3000";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -333,5 +346,6 @@
         private Button buttonMultiplication;
         private Button buttonReset;
         private Button buttonDot;
+        private Label label1;
     }
 }
