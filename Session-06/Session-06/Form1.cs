@@ -7,47 +7,63 @@ namespace Session_06 {
 
         Calculator.CalcType calcType;
         int numbers = 0;
-        bool flag = true;
+        bool newNumber = true;
+        bool dot = false;
 
 
-        private void button1_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "1";
 
-            if (flag) {
-                numbers++;
-                flag = false;
-            }
-
-            if (numbers == 2) {
-                buttonEquals.Enabled = true;
-            }
-
-
-        }
-
-        private void button5_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "6";
-            ButtonsKeyLogic();
-
-        }
-
-        private void button7_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "8";
-            ButtonsKeyLogic();
-
-        }
-
-        private void Button1_Click_1(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "0";
-            ButtonsKeyLogic();
-        }
 
         private void buttonAdd_Click(object sender, EventArgs e) {
             this.textBoxScreen.Text += "+";
             calcType = Calculator.CalcType.Add;
             ButtonsDisabler();
-            flag = true;
+            newNumber = true;
+            dot = false;
         }
+
+        private void buttonSubtraction_Click(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "-";
+            calcType = Calculator.CalcType.Sub;
+            ButtonsDisabler();
+            //buttonEquals.Enabled = true;
+            newNumber = true;
+        }
+
+
+        private void buttonDivision_Click(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "/";
+            calcType = Calculator.CalcType.Divide;
+            ButtonsDisabler();
+            //buttonEquals.Enabled = true;
+            newNumber = true;
+        }
+
+
+        private void buttonMultiplication_Click(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "*";
+            calcType = Calculator.CalcType.Multiply;
+            ButtonsDisabler();
+            //buttonEquals.Enabled = true;
+            newNumber = true;
+        }
+        private void buttonPower_Click(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "p";
+            calcType = Calculator.CalcType.Power;
+            ButtonsDisabler();
+            //buttonEquals.Enabled = true;
+            newNumber = true;
+        }
+
+        private void buttonRoot_Click(object sender, EventArgs e) {
+            calcType = Calculator.CalcType.Root;
+            ButtonsDisabler();
+            Calculator.Factory f = new Calculator.Factory(this.textBoxScreen.Text, calcType);
+            textBoxScreen.Text = f.CalcResolver();
+            ButtonsEnabler();
+            newNumber = true;
+            //buttonEquals.Enabled = true;
+        }
+
 
         private void Form1_Load(object sender, EventArgs e) {
 
@@ -90,7 +106,37 @@ namespace Session_06 {
 
 
 
+        private void button1_Click(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "1";
 
+            if (newNumber) {
+                numbers++;
+                newNumber = false;
+            }
+
+            if (numbers == 2) {
+                buttonEquals.Enabled = true;
+            }
+
+
+        }
+
+        private void button5_Click(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "6";
+            ButtonsKeyLogic();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "8";
+            ButtonsKeyLogic();
+
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e) {
+            this.textBoxScreen.Text += "0";
+            ButtonsKeyLogic();
+        }
         private void buttonNumber2_Click(object sender, EventArgs e) {
             this.textBoxScreen.Text += "2";
             ButtonsKeyLogic();
@@ -127,29 +173,10 @@ namespace Session_06 {
 
         }
 
-        private void buttonSubtraction_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "-";
-            calcType = Calculator.CalcType.Sub;
-            ButtonsDisabler();
-            //buttonEquals.Enabled = true;
-            flag = true;
-        }
+ 
 
-        private void buttonMultiplication_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "*";
-            calcType = Calculator.CalcType.Multiply;
-            ButtonsDisabler();
-            //buttonEquals.Enabled = true;
-            flag = true;
-        }
 
-        private void buttonDivision_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "/";
-            calcType = Calculator.CalcType.Divide;
-            ButtonsDisabler();
-            //buttonEquals.Enabled = true;
-            flag = true;
-        }
+
 
         private void button1_Click_2(object sender, EventArgs e) {
             this.textBoxScreen.Text = string.Empty;
@@ -157,29 +184,14 @@ namespace Session_06 {
 
         }
 
-        private void buttonPower_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += "p";
-            calcType = Calculator.CalcType.Power;
-            ButtonsDisabler();
-            //buttonEquals.Enabled = true;
-            flag = true;
-        }
 
-        private void buttonRoot_Click(object sender, EventArgs e) {
-            calcType = Calculator.CalcType.Root;
-            ButtonsDisabler();
-            Calculator.Factory f = new Calculator.Factory(this.textBoxScreen.Text, calcType);
-            textBoxScreen.Text = f.CalcResolver();
-            ButtonsEnabler();
-            flag = true;
-            //buttonEquals.Enabled = true;
-        }
 
 
         private void ButtonsKeyLogic() {
-            if (flag) {
+            if (newNumber) {
                 numbers++;
-                flag = false;
+                newNumber = false;
+                
             }
 
             if (numbers == 2) {
@@ -188,9 +200,11 @@ namespace Session_06 {
         }
 
         private void buttonDot_Click(object sender, EventArgs e) {
-            this.textBoxScreen.Text += ".";
-            ButtonsKeyLogic();
-
+            if (dot==false) {
+                this.textBoxScreen.Text += ".";
+                dot = true;
+                ButtonsKeyLogic();
+            }
         }
 
 
