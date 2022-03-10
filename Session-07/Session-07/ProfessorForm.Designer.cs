@@ -28,9 +28,9 @@
             // 
             // textBoxProfScreen
             // 
-            this.textBoxProfScreen.Location = new System.Drawing.Point(114, 120);
+            this.textBoxProfScreen.Location = new System.Drawing.Point(199, 182);
             this.textBoxProfScreen.Name = "textBoxProfScreen";
-            this.textBoxProfScreen.Size = new System.Drawing.Size(335, 20);
+            this.textBoxProfScreen.Size = new System.Drawing.Size(374, 20);
             this.textBoxProfScreen.TabIndex = 0;
             // 
             // ProfessorForm

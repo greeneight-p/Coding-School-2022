@@ -30,6 +30,8 @@
             this.textEditScreen = new DevExpress.XtraEditors.TextEdit();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
+            this.buttonShowProfessors = new System.Windows.Forms.Button();
+            this.textBoxShow = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditScreen.Properties)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
@@ -75,7 +77,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(12, 226);
+            this.buttonSave.Location = new System.Drawing.Point(12, 282);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 3;
@@ -85,7 +87,7 @@
             // 
             // buttonLoad
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(12, 283);
+            this.buttonLoad.Location = new System.Drawing.Point(93, 282);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(75, 23);
             this.buttonLoad.TabIndex = 5;
@@ -93,11 +95,31 @@
             this.buttonLoad.UseVisualStyleBackColor = true;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
+            // buttonShowProfessors
+            // 
+            this.buttonShowProfessors.Location = new System.Drawing.Point(175, 281);
+            this.buttonShowProfessors.Name = "buttonShowProfessors";
+            this.buttonShowProfessors.Size = new System.Drawing.Size(75, 23);
+            this.buttonShowProfessors.TabIndex = 7;
+            this.buttonShowProfessors.Text = "Professors";
+            this.buttonShowProfessors.UseVisualStyleBackColor = true;
+            this.buttonShowProfessors.Click += new System.EventHandler(this.buttonShowProfessors_Click);
+            // 
+            // textBoxShow
+            // 
+            this.textBoxShow.Location = new System.Drawing.Point(274, 281);
+            this.textBoxShow.Multiline = true;
+            this.textBoxShow.Name = "textBoxShow";
+            this.textBoxShow.Size = new System.Drawing.Size(504, 157);
+            this.textBoxShow.TabIndex = 8;
+            // 
             // UniversityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxShow);
+            this.Controls.Add(this.buttonShowProfessors);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textEditScreen);
@@ -124,6 +146,8 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
+        private System.Windows.Forms.Button buttonShowProfessors;
+        private System.Windows.Forms.TextBox textBoxShow;
     }
 }
 
