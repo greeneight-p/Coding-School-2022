@@ -26,7 +26,7 @@
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.labelID = new System.Windows.Forms.Label();
             this.textBoxSubject = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxCode = new System.Windows.Forms.TextBox();
             this.labelSebject = new System.Windows.Forms.Label();
             this.labelCode = new System.Windows.Forms.Label();
             this.labelCourses = new System.Windows.Forms.Label();
@@ -64,13 +64,13 @@
             this.textBoxSubject.Size = new System.Drawing.Size(123, 31);
             this.textBoxSubject.TabIndex = 34;
             // 
-            // textBoxName
+            // textBoxCode
             // 
-            this.textBoxName.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBoxName.Location = new System.Drawing.Point(341, 88);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(123, 31);
-            this.textBoxName.TabIndex = 33;
+            this.textBoxCode.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBoxCode.Location = new System.Drawing.Point(341, 88);
+            this.textBoxCode.Name = "textBoxCode";
+            this.textBoxCode.Size = new System.Drawing.Size(123, 31);
+            this.textBoxCode.TabIndex = 33;
             // 
             // labelSebject
             // 
@@ -111,6 +111,7 @@
             this.listBoxCourseStorage.Name = "listBoxCourseStorage";
             this.listBoxCourseStorage.Size = new System.Drawing.Size(221, 403);
             this.listBoxCourseStorage.TabIndex = 28;
+            this.listBoxCourseStorage.SelectedIndexChanged += new System.EventHandler(this.listBoxCourseStorage_SelectedIndexChanged);
             // 
             // buttonCancel
             // 
@@ -121,6 +122,7 @@
             this.buttonCancel.TabIndex = 41;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
@@ -131,6 +133,7 @@
             this.buttonSave.TabIndex = 40;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonNew
             // 
@@ -141,6 +144,7 @@
             this.buttonNew.TabIndex = 39;
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // buttonDelete
             // 
@@ -151,6 +155,7 @@
             this.buttonDelete.TabIndex = 38;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // CourseForm
             // 
@@ -164,13 +169,14 @@
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.textBoxSubject);
-            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxCode);
             this.Controls.Add(this.labelSebject);
             this.Controls.Add(this.labelCode);
             this.Controls.Add(this.labelCourses);
             this.Controls.Add(this.listBoxCourseStorage);
             this.Name = "CourseForm";
             this.Text = "CourseForm";
+            this.Load += new System.EventHandler(this.CourseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,7 +187,7 @@
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.TextBox textBoxSubject;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxCode;
         private System.Windows.Forms.Label labelSebject;
         private System.Windows.Forms.Label labelCode;
         private System.Windows.Forms.Label labelCourses;

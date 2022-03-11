@@ -105,6 +105,7 @@ namespace Session_07 {
                 Students.Remove(_selectedStudent);
                 _selectedStudent = null;
                 UpdateStudentList();
+                ClearFields();
             }
         }
 

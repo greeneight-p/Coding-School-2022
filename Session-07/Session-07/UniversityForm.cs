@@ -16,9 +16,12 @@ namespace Session_07 {
 
         private const string PROF_FILE_NAME = "professors.json";
         private const string STUD_FILE_NAME = "students.json";
+        private const string COURSE_FILE_NAME = "courses.json";
 
         public ProfessorStorage  ProfStorage{ get; set; }
         public StudentStorage StudentStorage { get; set; }
+
+        public CourseStorage CourseStorage { get; set; }    
 
         public UniversityForm() {
             InitializeComponent();
@@ -30,19 +33,9 @@ namespace Session_07 {
            
         }
 
-        private void buttonSave_Click(object sender, EventArgs e) {
-
-            string json = new JavaScriptSerializer().Serialize(ProfStorage);
-            File.WriteAllText(PROF_FILE_NAME, json);
-
-            json = new JavaScriptSerializer().Serialize(StudentStorage);
-            File.WriteAllText(STUD_FILE_NAME, json);
 
 
-        }
-
-        
-
+    
         private void editToolStripMenuItem_Click(object sender, EventArgs e) {
             var professorForm = new ProfessorForm();
             //professorForm.MdiParent = this;
@@ -56,14 +49,15 @@ namespace Session_07 {
 
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
+
             string json = new JavaScriptSerializer().Serialize(ProfStorage);
             File.WriteAllText(PROF_FILE_NAME, json);
-
-
 
             json = new JavaScriptSerializer().Serialize(StudentStorage);
             File.WriteAllText(STUD_FILE_NAME, json);
 
+            json = new JavaScriptSerializer().Serialize(CourseStorage);
+            File.WriteAllText(COURSE_FILE_NAME, json);
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -73,14 +67,16 @@ namespace Session_07 {
 
             json = File.ReadAllText(STUD_FILE_NAME);
             StudentStorage = (StudentStorage)new JavaScriptSerializer().Deserialize(json, typeof(StudentStorage));
- 
 
-            MessageBox.Show("File Loaded Succefully");
+            json = File.ReadAllText(COURSE_FILE_NAME);
+            CourseStorage= (CourseStorage)new JavaScriptSerializer().Deserialize(json, typeof(CourseStorage));
 
 
+            MessageBox.Show("Files Loaded Succefully");
             saveToolStripMenuItem.Enabled = true;
 
-            var course = new Course("C#-101");
+
+            //var course = new Course("C#-101");
             //ProfStorage.Professors[0].AddC(course);
         }
 
@@ -90,6 +86,21 @@ namespace Session_07 {
 
             studentsForm.StudentsStorage = StudentStorage;
             studentsForm.ShowDialog();
+        }
+
+        private void editToolStripMenuItem2_Click(object sender, EventArgs e) {
+            var courseForm = new CourseForm();
+
+            //CourseStorage = new CourseStorage();
+            //CourseStorage.Courses = new List<Course>();
+            //var course = new Course("C-Sharp");
+            //CourseStorage.Courses.Add(course);
+
+            courseForm.CourseStorage = CourseStorage;
+            courseForm.ShowDialog();
+
+
+
         }
     }
 }

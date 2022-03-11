@@ -53,8 +53,39 @@ namespace Session_07 {
             UpdateProfessorsList();
         }
 
+        private void buttonCancel_Click(object sender, EventArgs e) {
+            this.Close();
+        }
 
 
+
+
+        private void buttonDelete_Click(object sender, EventArgs e) {
+
+            if(_selectedProfessor != null) {
+                Professors.Remove(_selectedProfessor);
+                _selectedProfessor = null;
+                UpdateProfessorsList();
+                ClearFields();
+            }
+
+        }
+
+        private void buttonRevertFrontEnd_Click(object sender, EventArgs e) {
+        
+            PrintProfProps();
+        }
+
+
+        //to Revert den douleuei opws prepei. Afisa stn mesi to debugging !
+        private void buttonRevert_Click(object sender, EventArgs e) {
+
+            _selectedProfessor = _originalProfessor;
+
+            PrintProfProps();
+            UpdateProfessorsList();
+            
+        }
 
         private void CreateProfessor() {
 
@@ -75,32 +106,6 @@ namespace Session_07 {
                 MessageBox.Show("Max Capacity Of Professors Reached.!");
             }
         }
-
-        private void buttonDelete_Click(object sender, EventArgs e) {
-
-            if(_selectedProfessor != null) {
-                Professors.Remove(_selectedProfessor);
-                _selectedProfessor = null;
-                UpdateProfessorsList();
-            }
-
-        }
-
-        private void buttonRevertFrontEnd_Click(object sender, EventArgs e) {
-        
-            PrintProfProps();
-        }
-
-        private void buttonRevert_Click(object sender, EventArgs e) {
-
-            _selectedProfessor = _originalProfessor;
-
-            PrintProfProps();
-            UpdateProfessorsList();
-            
-        }
-
-
         private void ClearFields() {
             textBoxID.Text = string.Empty;
             textBoxName.Text = string.Empty;
@@ -133,8 +138,6 @@ namespace Session_07 {
 
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e) {
-            this.Close();
-        }
+
     }
 }
