@@ -95,6 +95,7 @@ namespace Session_07 {
                     Name = "New Professor",
                     Age = 0,
                     Rank = "B",
+                    Courses = new List<Course>()
 
                 };
 
@@ -133,8 +134,14 @@ namespace Session_07 {
 
 
         private void UpdateCourseList() {
+           
             listBoxCourses.Items.Clear();
-
+                int i = 1;
+                foreach (Course item in _selectedProfessor.Courses) {
+                    listBoxCourses.Items.Add($"[{i}] {item.Code}");
+                    i++;
+                }
+           
 
         }
 

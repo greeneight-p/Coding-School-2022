@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.labelCourses = new System.Windows.Forms.Label();
-            this.listBoxCourses = new System.Windows.Forms.ListBox();
+            this.listBoxStudentCourses = new System.Windows.Forms.ListBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
@@ -39,6 +39,9 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelStudents = new System.Windows.Forms.Label();
             this.listBoxStudentStorage = new System.Windows.Forms.ListBox();
+            this.listBoxAvailableCourses = new System.Windows.Forms.ListBox();
+            this.buttonAddCourse = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelCourses
@@ -51,20 +54,20 @@
             this.labelCourses.TabIndex = 33;
             this.labelCourses.Text = "Courses";
             // 
-            // listBoxCourses
+            // listBoxStudentCourses
             // 
-            this.listBoxCourses.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.listBoxCourses.FormattingEnabled = true;
-            this.listBoxCourses.ItemHeight = 19;
-            this.listBoxCourses.Location = new System.Drawing.Point(336, 230);
-            this.listBoxCourses.Name = "listBoxCourses";
-            this.listBoxCourses.Size = new System.Drawing.Size(123, 213);
-            this.listBoxCourses.TabIndex = 32;
+            this.listBoxStudentCourses.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.listBoxStudentCourses.FormattingEnabled = true;
+            this.listBoxStudentCourses.ItemHeight = 19;
+            this.listBoxStudentCourses.Location = new System.Drawing.Point(336, 230);
+            this.listBoxStudentCourses.Name = "listBoxStudentCourses";
+            this.listBoxStudentCourses.Size = new System.Drawing.Size(123, 213);
+            this.listBoxStudentCourses.TabIndex = 32;
             // 
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonCancel.Location = new System.Drawing.Point(713, 400);
+            this.buttonCancel.Location = new System.Drawing.Point(719, 139);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 43);
             this.buttonCancel.TabIndex = 31;
@@ -75,7 +78,7 @@
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonSave.Location = new System.Drawing.Point(632, 400);
+            this.buttonSave.Location = new System.Drawing.Point(719, 91);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 43);
             this.buttonSave.TabIndex = 30;
@@ -86,7 +89,7 @@
             // buttonNew
             // 
             this.buttonNew.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonNew.Location = new System.Drawing.Point(632, 351);
+            this.buttonNew.Location = new System.Drawing.Point(638, 91);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(75, 43);
             this.buttonNew.TabIndex = 29;
@@ -97,7 +100,7 @@
             // buttonDelete
             // 
             this.buttonDelete.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonDelete.Location = new System.Drawing.Point(713, 351);
+            this.buttonDelete.Location = new System.Drawing.Point(638, 140);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 43);
             this.buttonDelete.TabIndex = 28;
@@ -199,13 +202,48 @@
             this.listBoxStudentStorage.TabIndex = 18;
             this.listBoxStudentStorage.SelectedIndexChanged += new System.EventHandler(this.listBoxStudentStorage_SelectedIndexChanged);
             // 
+            // listBoxAvailableCourses
+            // 
+            this.listBoxAvailableCourses.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.listBoxAvailableCourses.FormattingEnabled = true;
+            this.listBoxAvailableCourses.ItemHeight = 19;
+            this.listBoxAvailableCourses.Location = new System.Drawing.Point(489, 230);
+            this.listBoxAvailableCourses.Name = "listBoxAvailableCourses";
+            this.listBoxAvailableCourses.Size = new System.Drawing.Size(123, 213);
+            this.listBoxAvailableCourses.TabIndex = 34;
+            this.listBoxAvailableCourses.SelectedIndexChanged += new System.EventHandler(this.listBoxAvailableCourses_SelectedIndexChanged);
+            // 
+            // buttonAddCourse
+            // 
+            this.buttonAddCourse.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonAddCourse.Location = new System.Drawing.Point(638, 400);
+            this.buttonAddCourse.Name = "buttonAddCourse";
+            this.buttonAddCourse.Size = new System.Drawing.Size(156, 43);
+            this.buttonAddCourse.TabIndex = 35;
+            this.buttonAddCourse.Text = "Add Course";
+            this.buttonAddCourse.UseVisualStyleBackColor = true;
+            this.buttonAddCourse.Click += new System.EventHandler(this.buttonAddCourse_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.Location = new System.Drawing.Point(618, 230);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 23);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Available Courses";
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonAddCourse);
+            this.Controls.Add(this.listBoxAvailableCourses);
             this.Controls.Add(this.labelCourses);
-            this.Controls.Add(this.listBoxCourses);
+            this.Controls.Add(this.listBoxStudentCourses);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonNew);
@@ -230,7 +268,7 @@
 
         #endregion
         private System.Windows.Forms.Label labelCourses;
-        private System.Windows.Forms.ListBox listBoxCourses;
+        private System.Windows.Forms.ListBox listBoxStudentCourses;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonNew;
@@ -245,5 +283,8 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelStudents;
         private System.Windows.Forms.ListBox listBoxStudentStorage;
+        private System.Windows.Forms.ListBox listBoxAvailableCourses;
+        private System.Windows.Forms.Button buttonAddCourse;
+        private System.Windows.Forms.Label label1;
     }
 }

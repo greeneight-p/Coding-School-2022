@@ -85,6 +85,7 @@ namespace Session_07 {
             var studentsForm = new StudentForm();
 
             studentsForm.StudentsStorage = StudentStorage;
+            studentsForm.CourseStorage = CourseStorage;
             studentsForm.ShowDialog();
         }
 

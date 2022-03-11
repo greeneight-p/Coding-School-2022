@@ -17,8 +17,13 @@ namespace Session_07 {
         public List<Student> Students { get; set; }
 
 
+        public CourseStorage CourseStorage { get; set; }
+        public List<Course> AvailableCourses { get; set; }
+
+
         private Student _selectedStudent;
         private Student _originalStudent;
+        private Course _selectedCourse;
 
 
         #region
@@ -29,9 +34,13 @@ namespace Session_07 {
         private void StudentForm_Load(object sender, EventArgs e) {
 
             Students = StudentsStorage.Students;
+            AvailableCourses = CourseStorage.Courses;
             UpdateStudentList();
+            UpdateAvailableCoursesList();
 
         }
+
+
 
         private void buttonNew_Click(object sender, EventArgs e) {
             CreateStudent();
@@ -40,6 +49,7 @@ namespace Session_07 {
         private void listBoxStudentStorage_SelectedIndexChanged(object sender, EventArgs e) {
             _selectedStudent = Students[listBoxStudentStorage.SelectedIndex];
             PrintStudentProps();
+            UpdateStudentCourses();
         }
 
         private void buttonSave_Click(object sender, EventArgs e) {
@@ -51,7 +61,27 @@ namespace Session_07 {
 
         }
         #endregion
+        private void buttonCancel_Click(object sender, EventArgs e) {
+            this.Close();
+        }
 
+        private void buttonAddCourse_Click(object sender, EventArgs e) {
+
+            //  _selectedStudent.Courses = new List<Course>();
+            _selectedStudent.Courses.Add(_selectedCourse);
+            UpdateAvailableCoursesList();
+            UpdateStudentCourses();
+        }    
+
+
+        private void UpdateStudentCourses() {
+            listBoxStudentCourses.Items.Clear();
+            int i = 1;
+            foreach (Course item in _selectedStudent.Courses) {
+                listBoxStudentCourses.Items.Add($"[{i}] {item.Code}");
+                i++;
+            }
+        }
 
 
         private void UpdateStudentList() {
@@ -62,6 +92,15 @@ namespace Session_07 {
                 i++;
             }
 
+        }
+
+        private void UpdateAvailableCoursesList() {
+            listBoxAvailableCourses.Items.Clear();
+            int i = 1;
+            foreach (Course item in AvailableCourses) {
+                listBoxAvailableCourses.Items.Add($"[{i}] {item.Code}");
+                i++;
+            }
         }
 
         private void PrintStudentProps() {
@@ -79,7 +118,8 @@ namespace Session_07 {
                 {
                     Name = "New Student",
                     Age = 0,
-                    RegistrationNumber = 0
+                    RegistrationNumber = 0,
+                    Courses = new List<Course>()
                 };
                 Students.Add(s);
                 UpdateStudentList();
@@ -109,8 +149,8 @@ namespace Session_07 {
             }
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e) {
-            this.Close();
+        private void listBoxAvailableCourses_SelectedIndexChanged(object sender, EventArgs e) {
+            _selectedCourse = AvailableCourses[listBoxAvailableCourses.SelectedIndex];
         }
     }
 }
