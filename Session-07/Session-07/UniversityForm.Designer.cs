@@ -24,105 +24,104 @@
         /// </summary>
         private void InitializeComponent() {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.rootToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textEditScreen = new DevExpress.XtraEditors.TextEdit();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonLoad = new System.Windows.Forms.Button();
-            this.buttonShowProfessors = new System.Windows.Forms.Button();
-            this.textBoxShow = new System.Windows.Forms.TextBox();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditScreen.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rootToolStripMenuItem,
-            this.professorsToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.professorsToolStripMenuItem,
+            this.studentsToolStripMenuItem,
+            this.coursesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // rootToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.rootToolStripMenuItem.Name = "rootToolStripMenuItem";
-            this.rootToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.rootToolStripMenuItem.Text = "Root";
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Enabled = false;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // professorsToolStripMenuItem
             // 
             this.professorsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showToolStripMenuItem});
+            this.editToolStripMenuItem});
             this.professorsToolStripMenuItem.Name = "professorsToolStripMenuItem";
             this.professorsToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.professorsToolStripMenuItem.Text = "Professors";
             // 
-            // showToolStripMenuItem
+            // editToolStripMenuItem
             // 
-            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.showToolStripMenuItem.Text = "Show";
-            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
-            // textEditScreen
+            // studentsToolStripMenuItem
             // 
-            this.textEditScreen.Location = new System.Drawing.Point(12, 200);
-            this.textEditScreen.Name = "textEditScreen";
-            this.textEditScreen.Size = new System.Drawing.Size(766, 20);
-            this.textEditScreen.TabIndex = 2;
+            this.studentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem1});
+            this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.studentsToolStripMenuItem.Text = "Students";
             // 
-            // buttonSave
+            // editToolStripMenuItem1
             // 
-            this.buttonSave.Location = new System.Drawing.Point(12, 282);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 3;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
-            // buttonLoad
+            // coursesToolStripMenuItem
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(93, 282);
-            this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(75, 23);
-            this.buttonLoad.TabIndex = 5;
-            this.buttonLoad.Text = "Load";
-            this.buttonLoad.UseVisualStyleBackColor = true;
-            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            this.coursesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem2});
+            this.coursesToolStripMenuItem.Name = "coursesToolStripMenuItem";
+            this.coursesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.coursesToolStripMenuItem.Text = "Courses";
             // 
-            // buttonShowProfessors
+            // editToolStripMenuItem2
             // 
-            this.buttonShowProfessors.Location = new System.Drawing.Point(175, 281);
-            this.buttonShowProfessors.Name = "buttonShowProfessors";
-            this.buttonShowProfessors.Size = new System.Drawing.Size(75, 23);
-            this.buttonShowProfessors.TabIndex = 7;
-            this.buttonShowProfessors.Text = "Professors";
-            this.buttonShowProfessors.UseVisualStyleBackColor = true;
-            this.buttonShowProfessors.Click += new System.EventHandler(this.buttonShowProfessors_Click);
-            // 
-            // textBoxShow
-            // 
-            this.textBoxShow.Location = new System.Drawing.Point(274, 281);
-            this.textBoxShow.Multiline = true;
-            this.textBoxShow.Name = "textBoxShow";
-            this.textBoxShow.Size = new System.Drawing.Size(504, 157);
-            this.textBoxShow.TabIndex = 8;
+            this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem2.Text = "Edit";
             // 
             // UniversityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxShow);
-            this.Controls.Add(this.buttonShowProfessors);
-            this.Controls.Add(this.buttonLoad);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.textEditScreen);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -131,7 +130,6 @@
             this.Load += new System.EventHandler(this.UniversityForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditScreen.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,14 +138,15 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem rootToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem professorsToolStripMenuItem;
-        private DevExpress.XtraEditors.TextEdit textEditScreen;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonLoad;
-        private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
-        private System.Windows.Forms.Button buttonShowProfessors;
-        private System.Windows.Forms.TextBox textBoxShow;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem coursesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem2;
     }
 }
 

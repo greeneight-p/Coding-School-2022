@@ -9,10 +9,10 @@ namespace University {
     
     public class ProfessorStorage {
 
-        public Professor[] Professors { get; set; }
+        public List<Professor> Professors { get; set; }
 
         public ProfessorStorage(int x) {
-            Professors = new Professor[x];
+            //Professors = new Professor[x];
         }
 
         public ProfessorStorage() {

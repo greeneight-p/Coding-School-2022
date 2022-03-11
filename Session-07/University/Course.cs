@@ -10,7 +10,12 @@ namespace University {
         public string Code { get; set; }
         public string Subject { get; set; }
         public Course() {
+            CourseID = Guid.NewGuid();
+        }
 
+        public Course(string s) {
+            CourseID = Guid.NewGuid();
+            Code = s;
         }
     }
 }

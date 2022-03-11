@@ -9,11 +9,17 @@ namespace University {
     public class Professor : Person {
 
         public string Rank { get; set; }
-        public Course[] Courses { get; set; }
+        public List<Course> Courses { get; set; }   
 
         public Professor() {
+          
 
 
+        }
+
+
+        public Professor ShallowCopy() {
+            return (Professor)MemberwiseClone();
         }
     }
 }

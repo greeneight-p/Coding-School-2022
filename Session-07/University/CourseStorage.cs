@@ -5,19 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace University {
-    [Serializable]
-    public class Student : Person {
+    public class CourseStorage {
 
-        public int RegistrationNumber { get; set; }
         public List<Course> Courses { get; set; }
 
-        public Student() {
+        public CourseStorage() {
 
         }
-
-
-
-
     }
-
 }
