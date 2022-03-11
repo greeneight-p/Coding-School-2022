@@ -84,7 +84,8 @@ namespace Session_07 {
 
             PrintProfProps();
             UpdateProfessorsList();
-            
+            UpdateCourseList();
+
         }
 
         private void CreateProfessor() {
@@ -98,10 +99,16 @@ namespace Session_07 {
                     Courses = new List<Course>()
 
                 };
-
+                
+                var c = new Course("New Course");
+                p.Courses.Add(c);
                 Professors.Add(p);
                 UpdateProfessorsList();
+                ClearFields();
                 listBoxProfStorage.SelectedIndex = (Professors.Count - 1);
+                //UpdateCourseList();
+
+
             }
             else {
                 MessageBox.Show("Max Capacity Of Professors Reached.!");
@@ -112,6 +119,7 @@ namespace Session_07 {
             textBoxName.Text = string.Empty;
             textBoxAge.Text = string.Empty;
             textBoxRank.Text = string.Empty;
+            listBoxCourses.Items.Clear();
         }
 
         private void PrintProfProps() {
@@ -120,6 +128,7 @@ namespace Session_07 {
             textBoxName.Text = _selectedProfessor.Name;
             textBoxAge.Text = _selectedProfessor.Age.ToString();
             textBoxRank.Text = _selectedProfessor.Rank;
+            UpdateCourseList();
         }
 
         private void UpdateProfessorsList() {
