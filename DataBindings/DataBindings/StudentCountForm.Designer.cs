@@ -33,6 +33,7 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsStudents)).BeginInit();
@@ -67,6 +68,7 @@
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -113,11 +115,22 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Open Details";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(657, 371);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Update List First";
+            // 
             // StudentCountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonUpdate);
@@ -146,5 +159,6 @@
         private Button buttonUpdate;
         private Label label1;
         private Label label2;
+        private Label label3;
     }
 }
