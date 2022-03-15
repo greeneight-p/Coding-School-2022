@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBindings", "DataBindings\DataBindings.csproj", "{291F217D-090B-420E-83B1-C38FD3436105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University", "University\University.csproj", "{5C4F92F0-71DE-4BF1-ACAB-483B8B04F638}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{291F217D-090B-420E-83B1-C38FD3436105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291F217D-090B-420E-83B1-C38FD3436105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291F217D-090B-420E-83B1-C38FD3436105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291F217D-090B-420E-83B1-C38FD3436105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C4F92F0-71DE-4BF1-ACAB-483B8B04F638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C4F92F0-71DE-4BF1-ACAB-483B8B04F638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C4F92F0-71DE-4BF1-ACAB-483B8B04F638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C4F92F0-71DE-4BF1-ACAB-483B8B04F638}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB539A16-80F3-423C-B585-E7FE32956129}
+	EndGlobalSection
+EndGlobal
