@@ -12,6 +12,7 @@ namespace CoffeeShop.EntityFrameWork.Configuration {
         public void Configure(EntityTypeBuilder<Customer> builder) {
 
             builder.ToTable("Customers");
+            builder.HasKey(builder => builder.ID);
             builder.HasKey(b => b.ID);
             builder.Property(b => b.Code).HasMaxLength(8);
             builder.Property(b => b.Description).HasMaxLength(20);

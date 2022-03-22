@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CoffeeShop.EntityFrameWork.Migrations
 {
-    [DbContext(typeof(CustomerContext))]
+    [DbContext(typeof(CoffeeShopContext))]
     [Migration("20220322112403_Initial")]
     partial class Initial
     {

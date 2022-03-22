@@ -15,6 +15,8 @@ namespace CoffeeShop.EntityFrameWork.Configuration {
             builder.HasKey("ID");
             builder.Property("Code").HasMaxLength(8);
             builder.Property("Description").HasMaxLength(20);
+            builder.Property("Price").HasColumnType("decimal");
+            builder.Property("Cost").HasColumnType("decimal");
             
         }
     }
