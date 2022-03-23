@@ -27,6 +27,8 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -34,7 +36,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.customersToolStripMenuItem});
+            this.customersToolStripMenuItem,
+            this.productCategoriesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -58,9 +61,24 @@
             // listToolStripMenuItem
             // 
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.listToolStripMenuItem.Text = "List";
             this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
+            // 
+            // productCategoriesToolStripMenuItem
+            // 
+            this.productCategoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listToolStripMenuItem1});
+            this.productCategoriesToolStripMenuItem.Name = "productCategoriesToolStripMenuItem";
+            this.productCategoriesToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.productCategoriesToolStripMenuItem.Text = "Product Categories";
+            // 
+            // listToolStripMenuItem1
+            // 
+            this.listToolStripMenuItem1.Name = "listToolStripMenuItem1";
+            this.listToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuItem1.Text = "List";
+            this.listToolStripMenuItem1.Click += new System.EventHandler(this.listToolStripMenuItem1_Click);
             // 
             // CoffeeShop
             // 
@@ -85,5 +103,7 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem customersToolStripMenuItem;
         private ToolStripMenuItem listToolStripMenuItem;
+        private ToolStripMenuItem productCategoriesToolStripMenuItem;
+        private ToolStripMenuItem listToolStripMenuItem1;
     }
 }

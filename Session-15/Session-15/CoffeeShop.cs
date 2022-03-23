@@ -26,5 +26,10 @@ namespace Session_15 {
             var customersForm = new CustomersForm();
             customersForm.ShowDialog();
         }
+
+        private void listToolStripMenuItem1_Click(object sender, EventArgs e) {
+            var productCategoriesForm = new ProductCategoriesForm();
+            productCategoriesForm.ShowDialog();
+        }
     }
 }

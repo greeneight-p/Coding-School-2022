@@ -23,5 +23,10 @@ namespace CoffeeShop.Model {
         }
 
 
+        public ProductCategory ShallowCopy() {
+            return (ProductCategory)MemberwiseClone();
+        }
+
+
     }
 }

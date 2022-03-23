@@ -45,15 +45,14 @@ namespace Session_15 {
             if(OriginalCustomer is not null) {
                 CustomerRepo.Update(Customer.ID, Customer);
             }
-            CustomerRepo.Create(Customer);
+            else {
+                CustomerRepo.Create(Customer);
+            }
+
             DialogResult = DialogResult.OK;
         }
 
         private void btnClose_Click(object sender, EventArgs e) {
-
-            //if(OriginalCustomer is not null) {
-            //    Customer = OriginalCustomer;
-            //}
 
             Close();
                 
