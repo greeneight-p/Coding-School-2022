@@ -31,7 +31,7 @@ namespace CoffeeShop.EntityFrameWork.Repositories {
 
         public Product? GetById(Guid id) {
             using var context = new CoffeeShopContext();
-            return context.Products.SingleOrDefault(x=>x.ID == id);
+            return context.Products.SingleOrDefault(x => x.ID == id);
         }
 
         public async Task Update(Guid id, Product entity) {
@@ -44,4 +44,5 @@ namespace CoffeeShop.EntityFrameWork.Repositories {
             foundProduct = entity;
             await context.SaveChangesAsync();
         }
+    }
 }
