@@ -5,14 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CoffeeShop.Model {
-    public class Product {
+    public class Product : BaseEntity {
 
-        public Guid ID{ get; set; } = Guid.NewGuid();
         public string Code { get; set; }
         public string Description { get; set; }
-        public Guid ProductCategory { get; set; }
         public decimal Price { get; set; }
         public decimal Cost { get; set; }
+
+        //Relation - Product eksartate apo 1 productCAt
+        public Guid ProductCategoryID { get; set; }
+        public ProductCategory ProductCategory { get; set; }
+
+
+        // Relation - ena transline eksartate apo ena product
+        public TransactionLine TransactionLine { get; set; }
+
+
+
+
 
         public Product() {
 

@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CoffeeShop.Model {
-    public class Employee {
+    public class Employee : BaseEntity {
 
-
-        public Guid ID { get; } = Guid.NewGuid();
 
         public string Name { get; set; }
 
@@ -17,6 +15,10 @@ namespace CoffeeShop.Model {
         public EmployeeType EmployeeType { get; set; }
 
         public decimal SalaryPerMonth { get; set; }
+
+        //1Trasnaction eksartate apo 1employee
+        public Transaction Transaction { get; set; }
+ 
 
         public Employee() {
 

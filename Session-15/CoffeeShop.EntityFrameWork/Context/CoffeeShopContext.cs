@@ -9,6 +9,8 @@ namespace CoffeeShop.EntityFrameWork {
         public DbSet<Product> Products { get; set; }   
         public DbSet<ProductCategory> ProductCategories { get; set; }   
         public DbSet<Employee> Emploees { get; set; }   
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<TransactionLine> TransactionsLine { get; set; }
 
 
 
@@ -18,6 +20,8 @@ namespace CoffeeShop.EntityFrameWork {
             modelBuilder.ApplyConfiguration(new ProductConfig());
             modelBuilder.ApplyConfiguration(new ProductCategoryConfig());
             modelBuilder.ApplyConfiguration(new EmployeeConfig());
+            modelBuilder.ApplyConfiguration(new TransactionConfig());
+            modelBuilder.ApplyConfiguration(new TransactionLineConfig());
 
 
         }

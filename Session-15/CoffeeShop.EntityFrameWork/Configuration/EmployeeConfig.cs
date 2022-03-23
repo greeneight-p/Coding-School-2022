@@ -16,6 +16,8 @@ namespace CoffeeShop.EntityFrameWork.Configuration {
             builder.Property(x => x.Surname).HasMaxLength(25);
             builder.Property(x => x.SalaryPerMonth).HasColumnType("decimal");
 
+
+
         }
     }
 }

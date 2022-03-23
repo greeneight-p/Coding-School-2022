@@ -17,7 +17,10 @@ namespace CoffeeShop.EntityFrameWork.Configuration {
             builder.Property("Description").HasMaxLength(20);
             builder.Property("Price").HasColumnType("decimal");
             builder.Property("Cost").HasColumnType("decimal");
-            
+
+            builder.HasOne(product => product.ProductCategory).WithOne(productcat => productcat.Product).HasForeignKey<Product>(product => product.ProductCategoryID);
+
+
         }
     }
 }

@@ -4,6 +4,7 @@ using CoffeeShop.EntityFrameWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoffeeShop.EntityFrameWork.Migrations
 {
     [DbContext(typeof(CoffeeShopContext))]
-    partial class CoffeeShopContextModelSnapshot : ModelSnapshot
+    [Migration("20220323130252_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,7 +67,12 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
+                    b.Property<Guid>("TransactionID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("ID");
+
+                    b.HasIndex("TransactionID");
 
                     b.ToTable("Employees", (string)null);
                 });
@@ -92,12 +99,12 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal");
 
-                    b.Property<Guid>("ProductCategoryID")
+                    b.Property<Guid>("TransactionLineID")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ProductCategoryID")
+                    b.HasIndex("TransactionLineID")
                         .IsUnique();
 
                     b.ToTable("Products", (string)null);
@@ -119,10 +126,16 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<Guid>("ProductID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("ProductType")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ProductID")
+                        .IsUnique();
 
                     b.ToTable("ProductCategories", (string)null);
                 });
@@ -139,9 +152,6 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("EmployeeID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("PaymentMethod")
                         .HasColumnType("int");
 
@@ -151,9 +161,6 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("CustomerID")
-                        .IsUnique();
-
-                    b.HasIndex("EmployeeID")
                         .IsUnique();
 
                     b.ToTable("Transactions", (string)null);
@@ -171,9 +178,6 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal");
 
-                    b.Property<Guid>("ProductID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -185,23 +189,42 @@ namespace CoffeeShop.EntityFrameWork.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ProductID")
-                        .IsUnique();
-
                     b.HasIndex("TransactionID");
 
                     b.ToTable("TransactionLines", (string)null);
                 });
 
-            modelBuilder.Entity("CoffeeShop.Model.Product", b =>
+            modelBuilder.Entity("CoffeeShop.Model.Employee", b =>
                 {
-                    b.HasOne("CoffeeShop.Model.ProductCategory", "ProductCategory")
-                        .WithOne("Product")
-                        .HasForeignKey("CoffeeShop.Model.Product", "ProductCategoryID")
+                    b.HasOne("CoffeeShop.Model.Transaction", "Transaction")
+                        .WithMany()
+                        .HasForeignKey("TransactionID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProductCategory");
+                    b.Navigation("Transaction");
+                });
+
+            modelBuilder.Entity("CoffeeShop.Model.Product", b =>
+                {
+                    b.HasOne("CoffeeShop.Model.TransactionLine", "TransactionLine")
+                        .WithOne("Product")
+                        .HasForeignKey("CoffeeShop.Model.Product", "TransactionLineID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TransactionLine");
+                });
+
+            modelBuilder.Entity("CoffeeShop.Model.ProductCategory", b =>
+                {
+                    b.HasOne("CoffeeShop.Model.Product", "Product")
+                        .WithOne("ProductCategory")
+                        .HasForeignKey("CoffeeShop.Model.ProductCategory", "ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("CoffeeShop.Model.Transaction", b =>
@@ -212,32 +235,16 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CoffeeShop.Model.Employee", "Employee")
-                        .WithOne("Transaction")
-                        .HasForeignKey("CoffeeShop.Model.Transaction", "EmployeeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Customer");
-
-                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("CoffeeShop.Model.TransactionLine", b =>
                 {
-                    b.HasOne("CoffeeShop.Model.Product", "Product")
-                        .WithOne("TransactionLine")
-                        .HasForeignKey("CoffeeShop.Model.TransactionLine", "ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("CoffeeShop.Model.Transaction", "Transaction")
-                        .WithMany("TransactionLines")
+                        .WithMany()
                         .HasForeignKey("TransactionID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Product");
 
                     b.Navigation("Transaction");
                 });
@@ -248,27 +255,16 @@ namespace CoffeeShop.EntityFrameWork.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CoffeeShop.Model.Employee", b =>
-                {
-                    b.Navigation("Transaction")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("CoffeeShop.Model.Product", b =>
                 {
-                    b.Navigation("TransactionLine")
+                    b.Navigation("ProductCategory")
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CoffeeShop.Model.ProductCategory", b =>
+            modelBuilder.Entity("CoffeeShop.Model.TransactionLine", b =>
                 {
                     b.Navigation("Product")
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CoffeeShop.Model.Transaction", b =>
-                {
-                    b.Navigation("TransactionLines");
                 });
 #pragma warning restore 612, 618
         }

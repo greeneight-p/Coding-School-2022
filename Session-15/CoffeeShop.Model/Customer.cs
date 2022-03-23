@@ -5,14 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CoffeeShop.Model {
-    public class Customer {
+    public class Customer : BaseEntity {
 
-        public Guid ID { get; set; } = Guid.NewGuid();
+
         public string Code { get; set; }
         public string Description { get; set; }
 
+
+        //1Transaction eksarate apo 1 customer
+        public Transaction Transaction{ get; set; }  
+
         public Customer() {
 
+        }
+
+
+        public Customer ShallowCopy() {
+            return (Customer)MemberwiseClone();
         }
     }
 }
