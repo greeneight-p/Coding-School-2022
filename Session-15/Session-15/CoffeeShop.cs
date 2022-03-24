@@ -31,5 +31,10 @@ namespace Session_15 {
             var productCategoriesForm = new ProductCategoriesForm();
             productCategoriesForm.ShowDialog();
         }
+
+        private void listToolStripMenuItem2_Click(object sender, EventArgs e) {
+            var productsForm = new ProductsForm();
+            productsForm.ShowDialog();
+        }
     }
 }

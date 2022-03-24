@@ -97,8 +97,7 @@ namespace CoffeeShop.EntityFrameWork.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ProductCategoryID")
-                        .IsUnique();
+                    b.HasIndex("ProductCategoryID");
 
                     b.ToTable("Products", (string)null);
                 });
@@ -150,11 +149,9 @@ namespace CoffeeShop.EntityFrameWork.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CustomerID")
-                        .IsUnique();
+                    b.HasIndex("CustomerID");
 
-                    b.HasIndex("EmployeeID")
-                        .IsUnique();
+                    b.HasIndex("EmployeeID");
 
                     b.ToTable("Transactions", (string)null);
                 });
@@ -185,8 +182,7 @@ namespace CoffeeShop.EntityFrameWork.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ProductID")
-                        .IsUnique();
+                    b.HasIndex("ProductID");
 
                     b.HasIndex("TransactionID");
 
@@ -196,8 +192,8 @@ namespace CoffeeShop.EntityFrameWork.Migrations
             modelBuilder.Entity("CoffeeShop.Model.Product", b =>
                 {
                     b.HasOne("CoffeeShop.Model.ProductCategory", "ProductCategory")
-                        .WithOne("Product")
-                        .HasForeignKey("CoffeeShop.Model.Product", "ProductCategoryID")
+                        .WithMany("Products")
+                        .HasForeignKey("ProductCategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -207,14 +203,14 @@ namespace CoffeeShop.EntityFrameWork.Migrations
             modelBuilder.Entity("CoffeeShop.Model.Transaction", b =>
                 {
                     b.HasOne("CoffeeShop.Model.Customer", "Customer")
-                        .WithOne("Transaction")
-                        .HasForeignKey("CoffeeShop.Model.Transaction", "CustomerID")
+                        .WithMany("Transactions")
+                        .HasForeignKey("CustomerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CoffeeShop.Model.Employee", "Employee")
-                        .WithOne("Transaction")
-                        .HasForeignKey("CoffeeShop.Model.Transaction", "EmployeeID")
+                        .WithMany("Transactions")
+                        .HasForeignKey("EmployeeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -226,8 +222,8 @@ namespace CoffeeShop.EntityFrameWork.Migrations
             modelBuilder.Entity("CoffeeShop.Model.TransactionLine", b =>
                 {
                     b.HasOne("CoffeeShop.Model.Product", "Product")
-                        .WithOne("TransactionLine")
-                        .HasForeignKey("CoffeeShop.Model.TransactionLine", "ProductID")
+                        .WithMany("TransactionLines")
+                        .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -244,26 +240,22 @@ namespace CoffeeShop.EntityFrameWork.Migrations
 
             modelBuilder.Entity("CoffeeShop.Model.Customer", b =>
                 {
-                    b.Navigation("Transaction")
-                        .IsRequired();
+                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("CoffeeShop.Model.Employee", b =>
                 {
-                    b.Navigation("Transaction")
-                        .IsRequired();
+                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("CoffeeShop.Model.Product", b =>
                 {
-                    b.Navigation("TransactionLine")
-                        .IsRequired();
+                    b.Navigation("TransactionLines");
                 });
 
             modelBuilder.Entity("CoffeeShop.Model.ProductCategory", b =>
                 {
-                    b.Navigation("Product")
-                        .IsRequired();
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("CoffeeShop.Model.Transaction", b =>

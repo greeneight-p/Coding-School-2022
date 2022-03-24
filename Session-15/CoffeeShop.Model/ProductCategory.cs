@@ -13,7 +13,7 @@ namespace CoffeeShop.Model {
 
 
         //Relation Product has 1 ProductCat
-        public Product Product { get; set; }
+        public List<Product> Products { get; set; }
 
 
 

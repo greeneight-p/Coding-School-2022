@@ -17,8 +17,8 @@ namespace CoffeeShop.EntityFrameWork.Configuration {
             builder.Property(transaction => transaction.TotalPrice).HasColumnType("decimal");
           
 
-            builder.HasOne(transaction => transaction.Customer).WithOne(customer => customer.Transaction).HasForeignKey<Transaction>(transaction => transaction.CustomerID);
-            builder.HasOne(transaction => transaction.Employee).WithOne(employee => employee.Transaction).HasForeignKey<Transaction>(transaction => transaction.EmployeeID);
+            builder.HasOne(transaction => transaction.Customer).WithMany(customer => customer.Transactions).HasForeignKey(transaction => transaction.CustomerID);
+            builder.HasOne(transaction => transaction.Employee).WithMany(employee => employee.Transactions).HasForeignKey(transaction => transaction.EmployeeID);
             
 
 

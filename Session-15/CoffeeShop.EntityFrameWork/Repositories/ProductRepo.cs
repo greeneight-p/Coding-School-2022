@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CoffeeShop.EntityFrameWork.Repositories {
-    internal class ProductRepo : IEntityRepo<Product> {
+    public class ProductRepo : IEntityRepo<Product> {
         public async Task Create(Product entity) {
             using var context = new CoffeeShopContext();
             context.Products.Add(entity);
@@ -41,7 +41,12 @@ namespace CoffeeShop.EntityFrameWork.Repositories {
                 return;
             }
 
-            foundProduct = entity;
+            foundProduct.Code = entity.Code;
+            foundProduct.Description = entity.Description;
+            foundProduct.Cost = entity.Cost;
+            foundProduct.Price=entity.Price;
+            foundProduct.ProductCategoryID = entity.ProductCategoryID;
+       
             await context.SaveChangesAsync();
         }
     }

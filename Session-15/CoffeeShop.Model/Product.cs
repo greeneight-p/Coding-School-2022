@@ -17,8 +17,8 @@ namespace CoffeeShop.Model {
         public ProductCategory ProductCategory { get; set; }
 
 
-        // Relation - ena transline eksartate apo ena product
-        public TransactionLine TransactionLine { get; set; }
+        // Relation - kathe transline eksartate apo ena product
+        public List<TransactionLine> TransactionLines { get; set; }
 
 
 

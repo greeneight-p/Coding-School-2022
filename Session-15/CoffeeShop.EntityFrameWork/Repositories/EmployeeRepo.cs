@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CoffeeShop.EntityFrameWork.Repositories {
-    internal class EmployeeRepo : IEntityRepo<Employee> {
+    public class EmployeeRepo : IEntityRepo<Employee> {
         public async Task Create(Employee entity) {
             using var context = new CoffeeShopContext();
             context.Employees.Add(entity);

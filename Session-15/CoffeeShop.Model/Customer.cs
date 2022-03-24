@@ -13,7 +13,7 @@ namespace CoffeeShop.Model {
 
 
         //1Transaction eksarate apo 1 customer
-        public Transaction Transaction{ get; set; }  
+        public List<Transaction> Transactions{ get; set; }  
 
         public Customer() {
 

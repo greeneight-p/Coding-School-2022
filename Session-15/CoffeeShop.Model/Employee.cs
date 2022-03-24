@@ -17,8 +17,9 @@ namespace CoffeeShop.Model {
         public decimal SalaryPerMonth { get; set; }
 
         //1Trasnaction eksartate apo 1employee
-        public Transaction Transaction { get; set; }
- 
+        public List<Transaction> Transactions { get; set; }
+
+
 
         public Employee() {
 

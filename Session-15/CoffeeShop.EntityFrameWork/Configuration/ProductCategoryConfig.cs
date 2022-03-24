@@ -16,7 +16,7 @@ namespace CoffeeShop.EntityFrameWork.Configuration {
             builder.Property(x => x.Description).HasMaxLength(20);
 
 
-            // 1 product exei 1 productCat 
+          
             
     
         }
